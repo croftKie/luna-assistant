@@ -1,4 +1,5 @@
 import random
+import json
 from datetime import datetime
 import os
 import utils
@@ -6,6 +7,14 @@ import responses
 import settings
 import commands
 import webbrowser
+
+def __init__():
+    with open("vars.json", "r") as openFile:
+        json_obj = json.load(openFile)
+        print(json_obj)
+        settings.USER_NAME = json_obj["user_name"]
+        settings.AI_NAME = json_obj["ai_name"]
+    print(settings.USER_NAME)
 
 def welcome(command):
     if commands.dailyGreetings[0] in command:
@@ -35,6 +44,14 @@ def tabManager(command):
     if commands.tabCommands[1] in command:
         utils.speak("Sure, opening your coding tabs.")
         for x in settings.CODING_TABS:
+            webbrowser.open(x)
+    if commands.tabCommands[2] in command:
+        utils.speak("Sure, opening your movie tabs.")
+        for x in settings.MOVIE_TABS:
+            webbrowser.open(x)
+    if commands.tabCommands[3] in command:
+        utils.speak("Sure, opening your news tabs.")
+        for x in settings.NEWS_TABS:
             webbrowser.open(x)
 
 def webSearch(command):
@@ -74,6 +91,7 @@ def randomTasks(command):
 
 
 def main():
+    __init__()
     on = True
     initCommand = utils.takeCommand()
     if settings.AI_NAME in initCommand:
