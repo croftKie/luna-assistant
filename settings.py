@@ -1,4 +1,4 @@
-USER_NAME = "Person"
+USER_NAME = "Kieran"
 AI_NAME = "Luna"
 
 # TABS
