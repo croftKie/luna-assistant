@@ -16,7 +16,10 @@
 
 ## About The Project
 
+![Luna GUI](./assets/lva.png)
+
 Luna Assistant is the open source version of my own voice assistant. Written in python with the use of as many core modules and open source modules as possible to create a voice assistant with limited exposure to data collection and increased personal privacy.
+
 - Contains a range of responses and topics to keep answers fresh and engaging.
 - Search the web and a range of websites (YouTube, images, etc) via voice command.
 - Load up pre-saved browser tabs for improved productivity.
